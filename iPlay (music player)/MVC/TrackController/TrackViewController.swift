@@ -11,8 +11,10 @@ class TrackViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    var playerVC: PlayerViewController!
     var tracks: [Track] = []
     var audio = Audio()
+    var currentSongIndex = -2
     
     //MARK: - Lifecyycle
     override func viewDidLoad() {
@@ -25,7 +27,27 @@ extension TrackViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         tableView.deselectRow(at: indexPath, animated: true)
         let track = tracks[indexPath.row]
-        audio.setUpPlayer(track)
+        if playerVC == nil {
+            playerVC = PlayerViewController()
+            playerVC.queuePos = indexPath.row
+            playerVC.audio = audio
+            playerVC.tracks = tracks
+            audio.setUpPlayer(track)
+            currentSongIndex = indexPath.row
+        } else {
+            currentSongIndex = playerVC.queuePos!
+            playerVC = nil
+            if currentSongIndex == indexPath.row {
+            } else {
+                audio.player.stop()
+                audio.setUpPlayer(track)
+            }
+            playerVC = PlayerViewController()
+            playerVC.queuePos = indexPath.row
+            playerVC.audio = audio
+            playerVC.tracks = tracks
+        }
+            self.show(self.playerVC, sender: self)
     }
 }
     //MARK: - TableView Datasource Methods

@@ -8,22 +8,46 @@
 import UIKit
 
 class PlayerViewController: UIViewController {
+    //MARK: - Properties
+    var queuePos: Int!
+    var tracks: [Track]!
+    var audio: Audio!
+    //MARK: - UI Initialization
+    private let playerView = PlayerView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        view.backgroundColor = .white
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configure()
+    }
+}
 
+extension PlayerViewController {
+    
+    private func configure() {
+        setupVievs()
+        constrtaintViews()
+        
+    }
+    
+    private func setupVievs() {
+        [playerView].forEach {view.addView($0)}
+    }
+    
+    private func constrtaintViews() {
+        NSLayoutConstraint.activate([
+            playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            playerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
 }

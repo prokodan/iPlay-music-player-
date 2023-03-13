@@ -61,6 +61,16 @@ extension TrackViewController: UITableViewDataSource {
         let track = tracks[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = "\(track.title) - \(track.artist)"
+
+        content.secondaryText = "\(String.getDisplayedTimeString(for: track.duration))"
+        content.textProperties.lineBreakMode = .byTruncatingTail
+        content.textProperties.numberOfLines = 0
+        content.textProperties.font = UIFont(name: "Helvetica-Light", size: 14) ?? UIFont()
+        content.textProperties.color = .black
+        
+        content.secondaryTextProperties.font = UIFont(name: "Helvetica-Light", size: 14) ?? UIFont()
+        content.secondaryTextProperties.color = .black
+        
         cell.contentConfiguration = content
         return cell
     }
@@ -74,7 +84,10 @@ extension TrackViewController {
         configureDelegates()
     }
     private func fillUpSongs() {
-        tracks = Track.getTracks()
+        Task {
+            self.tracks = await audio.getTracks()
+            self.tableView.reloadData()
+        }
     }
     
     private func configureDataSource() {

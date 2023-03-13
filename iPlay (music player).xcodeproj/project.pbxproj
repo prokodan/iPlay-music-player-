@@ -135,18 +135,18 @@
 				9E2AD75C29BF015D0075C38D /* Audio */,
 				9EB2FBFC29C1910700861ADA /* Model */,
 				9EB2FBFF29C1910700861ADA /* View */,
-				9EB2FBF329C1910700861ADA /* TrackController */,
+				9EB2FBF329C1910700861ADA /* Track */,
 				9EB2FBF429C1910700861ADA /* Player */,
 			);
 			path = MVC;
 			sourceTree = "<group>";
 		};
-		9EB2FBF329C1910700861ADA /* TrackController */ = {
+		9EB2FBF329C1910700861ADA /* Track */ = {
 			isa = PBXGroup;
 			children = (
 				9EB2FBDA29C1910700861ADA /* TrackViewController.swift */,
 			);
-			path = TrackController;
+			path = Track;
 			sourceTree = "<group>";
 		};
 		9EB2FBF429C1910700861ADA /* Player */ = {

@@ -15,7 +15,7 @@ class PlayerViewController: UIViewController {
     var timer: Timer?
     //MARK: - UI Initialization
     private let playerView = PlayerView()
-
+    //MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         view.backgroundColor = .white
@@ -24,13 +24,13 @@ class PlayerViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configure()
     }
 }
-
+    //MARK: - Configure Methods
 extension PlayerViewController {
     
     private func configure() {
@@ -43,7 +43,7 @@ extension PlayerViewController {
     
     private func configureLabels() {
         let track = tracks[queuePos]
-        
+        getImageCover()
         playerView.titleLabel.text = track.title
         playerView.authorLabel.text = track.artist
         playerView.currentTimeSlider.minimumValue = 0.0
@@ -64,7 +64,7 @@ extension PlayerViewController {
         ])
     }
 }
-
+    //MARK: - Setting Targets
 extension PlayerViewController {
     private func setTargets() {
         playerView.playPauseButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
@@ -74,7 +74,7 @@ extension PlayerViewController {
         playerView.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
 }
-
+//MARK: - Buttons Target Methods
 @objc
 extension PlayerViewController {
     func playButtonTapped() {
@@ -100,7 +100,6 @@ extension PlayerViewController {
             playerView.removeFromSuperview()
             timer?.invalidate()
             configure()
-//            configureLabels()
             playerView.playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
             break
         }
@@ -120,7 +119,6 @@ extension PlayerViewController {
             playerView.removeFromSuperview()
             timer?.invalidate()
             configure()
-//            configureLabels()
             playerView.playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
             break
         }
@@ -131,7 +129,6 @@ extension PlayerViewController {
         audio.player.prepareToPlay()
         audio.player.currentTime = TimeInterval(sender.value)
         audio.player.play()
-        
     }
     
     func closeButtonTapped() {
@@ -146,6 +143,16 @@ extension PlayerViewController {
         
         if Int(audio.player.currentTime) >= Int(audio.player.duration) {
             forwardButtonTapped()
+        }
+    }
+}
+//MARK: - Audio Methods
+extension PlayerViewController {
+    private func getImageCover() {
+        let track = tracks[queuePos]
+        Task {
+            playerView.albumView.image = await audio.getCoverImage(track)
+            view.reloadInputViews()
         }
     }
 }

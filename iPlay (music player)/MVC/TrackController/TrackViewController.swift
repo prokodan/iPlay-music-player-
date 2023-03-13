@@ -12,6 +12,7 @@ class TrackViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var tracks: [Track] = []
+    var audio = Audio()
     
     //MARK: - Lifecyycle
     override func viewDidLoad() {
@@ -23,7 +24,8 @@ class TrackViewController: UIViewController {
 extension TrackViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let track = tracks[indexPath.row]
+        audio.setUpPlayer(track)
     }
 }
     //MARK: - TableView Datasource Methods

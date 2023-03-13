@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E2AD75E29BF01660075C38D /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AD75D29BF01660075C38D /* Audio.swift */; };
 		9EB2FBD729C1910700861ADA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBD629C1910700861ADA /* AppDelegate.swift */; };
 		9EB2FBD929C1910700861ADA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBD829C1910700861ADA /* SceneDelegate.swift */; };
 		9EB2FBDB29C1910700861ADA /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBDA29C1910700861ADA /* TrackViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E2AD75D29BF01660075C38D /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		9EB2FBD329C1910700861ADA /* iPlay (music player).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPlay (music player).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB2FBD629C1910700861ADA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB2FBD829C1910700861ADA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E2AD75C29BF015D0075C38D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9E2AD75D29BF01660075C38D /* Audio.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		9EB2FBCA29C1910700861ADA = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		9EB2FBF229C1910700861ADA /* MVC */ = {
 			isa = PBXGroup;
 			children = (
+				9E2AD75C29BF015D0075C38D /* Audio */,
 				9EB2FBFC29C1910700861ADA /* Model */,
 				9EB2FBFF29C1910700861ADA /* View */,
 				9EB2FBF329C1910700861ADA /* TrackController */,
@@ -232,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2AD75E29BF01660075C38D /* Audio.swift in Sources */,
 				9EB2FBDB29C1910700861ADA /* TrackViewController.swift in Sources */,
 				9EB2FBF629C1910700861ADA /* PlayerViewController.swift in Sources */,
 				9EB2FBF829C1910700861ADA /* BaseView.swift in Sources */,

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E2AD75E29BF01660075C38D /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AD75D29BF01660075C38D /* Audio.swift */; };
 		9E2AD76129BF21710075C38D /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AD76029BF21710075C38D /* UIView + extension.swift */; };
+		9E2AD76329BF2E9C0075C38D /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2AD76229BF2E9C0075C38D /* String + extension.swift */; };
 		9EB2FBD729C1910700861ADA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBD629C1910700861ADA /* AppDelegate.swift */; };
 		9EB2FBD929C1910700861ADA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBD829C1910700861ADA /* SceneDelegate.swift */; };
 		9EB2FBDB29C1910700861ADA /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2FBDA29C1910700861ADA /* TrackViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		9E2AD75D29BF01660075C38D /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		9E2AD76029BF21710075C38D /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
+		9E2AD76229BF2E9C0075C38D /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		9EB2FBD329C1910700861ADA /* iPlay (music player).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPlay (music player).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB2FBD629C1910700861ADA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB2FBD829C1910700861ADA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				9E2AD76029BF21710075C38D /* UIView + extension.swift */,
+				9E2AD76229BF2E9C0075C38D /* String + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				9EB2FBFB29C1910700861ADA /* PlayerView.swift in Sources */,
 				9EB2FBD729C1910700861ADA /* AppDelegate.swift in Sources */,
 				9EB2FBD929C1910700861ADA /* SceneDelegate.swift in Sources */,
+				9E2AD76329BF2E9C0075C38D /* String + extension.swift in Sources */,
 				9EB2FBFE29C1910700861ADA /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

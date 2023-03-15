@@ -61,7 +61,7 @@ class Audio {
                 let fileName = url.lastPathComponent.components(separatedBy: ".mp3").first!
                 let duration = try await asset.load(.duration).seconds
                 
-                print(duration)
+//                print(duration)
                 tracks.append(Track(title: title ?? "defTitle",
                                     album: album ?? "defAlbum",
                                     artist: artist ?? "defArtist",
